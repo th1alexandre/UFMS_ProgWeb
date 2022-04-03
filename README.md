@@ -41,9 +41,9 @@ docker-compose up
 docker-compose down
 ```
 
-The data is kept in volumes and to clean the database is necessary to remove the `postgres-data` directory.
+The data is kept in volumes and to clean the database is necessary to remove the `postgres_data` directory.
 
 ```
-rm -Rf postgres-data
+rm -Rf postgres_data
 ```
 <br>
