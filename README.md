@@ -1,49 +1,52 @@
 # Trabalho de Programação para Web
-Professor HERCULES CARDOSO DA SILVA
 
-## Resume
+### Alunos:
+- Bianca Motta     - RGA 2021.1906.056-5
+- Gabriel Neris    - RGA 2020.1907.023-2
+- Thiago Alexandre - RGA 2021.1906.017-4
+- Thiago Simão     - RGA 2021.1906.058-1
 
-SHOULD I PUT A LONG DESCRIPTION HERE? OR MAYBE SHORT? I DON'T KNOW
+### Professor:
+
+- Hercules Cardoso da Silva
+<br>
+
+## Resumo
+
+Lorem ipsum potenti conubia donec pellentesque at tortor magna, rhoncus cursus congue dolor malesuada nulla. vel phasellus nam quis hac fusce accumsan sit imperdiet in, fringilla nam molestie eleifend sapien adipiscing dictum dictumst per curabitur, pharetra himenaeos aliquam lacinia commodo nunc vitae imperdiet.
 <br>
 <br>
 
-## Run locally
-### Requirements
+## Executar localmente
+### Requisitos
+#### Windows ou Mac
+- Docker Desktop
+#### Linux
 - Docker
 - Docker Compose
 
 <br>
 
-### Environmental variables
+### Variáveis de ambiente
 
-- Copy the `.env.dev` to a new file `.env` and update the variables.
+- Copie o conteúdo do arquivo `.env.dev` para um novo arquivo `.env` e atualize as variáveis.
 
 <br>
 
-### Build
+### Construção da imagem
 
 ```
 docker-compose build
 ```
-<br>
 
-### Execute
+### Executar
 
 ```
 docker-compose up
 ```
 
-<br>
-
-### Finish execution
+### Terminar execução
 
 ```
 docker-compose down
 ```
-
-The data is kept in volumes and to clean the database is necessary to remove the `postgres_data` directory.
-
-```
-rm -Rf postgres_data
-```
-<br>
