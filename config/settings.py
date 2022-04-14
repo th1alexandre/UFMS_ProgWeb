@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'criticas',
+    'usuarios',
 ]
 
 MIDDLEWARE = [
@@ -57,7 +58,10 @@ ROOT_URLCONF = 'config.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'receitas/templates')],
+        'DIRS': [
+            os.path.join(BASE_DIR, 'criticas/templates'),
+            os.path.join(BASE_DIR, 'usuarios/templates')
+        ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
