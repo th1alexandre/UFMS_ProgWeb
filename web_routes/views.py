@@ -13,8 +13,8 @@ def review_edit(request):
 def review_new(request):
     return render(request, 'review_new/review_new.html')
 
-def login(request):
-    return render(request, 'login/login.html')
+def sign_in(request):
+    return render(request, 'sign_in/sign_in.html')
 
-def signup(request):
-    return render(request, 'signup/signup.html')
+def sign_up(request):
+    return render(request, 'sign_up/sign_up.html')
