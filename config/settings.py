@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'criticas',
     'usuarios',
+    'web_routes',
 ]
 
 MIDDLEWARE = [
