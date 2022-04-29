@@ -4,6 +4,7 @@ from django.contrib import auth
 from web_routes.views import index, sign_in, sign_up
 from uuid import uuid4
 
+
 def login(request):
     if request.method == 'POST':
         email = request.POST['email']
@@ -20,7 +21,8 @@ def login(request):
         return redirect(sign_in)
 
 def logout(request):
-    pass
+    auth.logout(request)
+    return redirect(index)
 
 def user_create(request):
     if request.method == 'POST':
