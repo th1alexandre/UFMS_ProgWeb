@@ -1,10 +1,23 @@
 from django.shortcuts import redirect
 from django.contrib.auth.models import User
-from web_routes.views import sign_in, sign_up
+from django.contrib import auth
+from web_routes.views import index, sign_in, sign_up
 from uuid import uuid4
 
 def login(request):
-    pass
+    if request.method == 'POST':
+        email = request.POST['email']
+        password = request.POST['password']
+
+        user = User.objects.filter(email = email)
+        if user.exists():
+            id = user.values_list('username', flat=True).get()
+            user = auth.authenticate(request, username=id, password=password)
+
+            if user is not None:
+                auth.login(request, user)
+                return redirect(index)
+        return redirect(sign_in)
 
 def logout(request):
     pass

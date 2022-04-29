@@ -1,1 +1,17 @@
-<h1>"Sign in" page</h1>
+<form action="http://localhost:8000/api/login" method="POST">
+    {% csrf_token %}
+      <div>
+          <div>
+              <label><b>Email</b></label>
+              <input type="email" name="email" placeholder="Ex.: t_alexandre@ufms.br" required>
+          </div>
+          <div>
+              <label><b>Senha</b></label>
+              <input type="password" name="password" placeholder="Digite sua senha" required>
+          </div>
+          <div>
+              <button type="submit">Login</button>
+          </div>
+      </div>
+  </form>
+  
