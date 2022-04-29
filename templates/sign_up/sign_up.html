@@ -1,1 +1,28 @@
-<h1>"Sign up" page</h1>
+<form action="http://localhost:8000/api/user-create" method="POST">
+  {% csrf_token %}
+    <div>
+        <div>
+            <label><b>Primeiro Nome</b></label>
+            <input type="text" name="first_name" placeholder="Ex.: Ednaldo" required>
+        </div>
+        <div>
+            <label><b>Último Nome</b></label>
+            <input type="text" name="last_name" placeholder="Ex.: Pereira" required>
+        </div>
+        <div>
+            <label><b>Email</b></label>
+            <input type="email" name="email" placeholder="Ex.: t_alexandre@ufms.br" required>
+        </div>
+        <div>
+            <label><b>Senha</b></label>
+            <input type="password" name="password_1" placeholder="Digite sua senha" required>
+        </div>
+        <div>
+            <label><b>Confirmação de senha</b></label>
+            <input type="password" name="password_2" placeholder="Digite sua senha mais uma vez" required>
+        </div>
+        <div>
+            <button type="submit">Criar sua conta</button>
+        </div>
+    </div>
+</form>
