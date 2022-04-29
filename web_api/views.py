@@ -11,8 +11,8 @@ def login(request):
 
         user = User.objects.filter(email = email)
         if user.exists():
-            id = user.values_list('username', flat=True).get()
-            user = auth.authenticate(request, username=id, password=password)
+            username = user.values_list('username', flat=True).get()
+            user = auth.authenticate(request, username=username, password=password)
 
             if user is not None:
                 auth.login(request, user)
@@ -39,7 +39,7 @@ def user_create(request):
         }
 
         if _user_create_validate(data):
-            user = User.objects.create(
+            user = User.objects.create_user(
                     username = uuid4(),
                     first_name = data['first_name'],
                     last_name = data['last_name'],
