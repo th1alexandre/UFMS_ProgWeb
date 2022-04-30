@@ -1,17 +1,19 @@
+{% extends '_base.html' %}
+{% block content %}
 <form action="{% url 'user_create' %}" method="POST">
-  {% csrf_token %}
+    {% csrf_token %}
     <div>
         <div>
             <label><b>Primeiro Nome</b></label>
-            <input type="text" name="first_name" placeholder="Ex.: Ednaldo" required>
+            <input type="text" name="first_name" placeholder="Primeiro nome" required>
         </div>
         <div>
             <label><b>Último Nome</b></label>
-            <input type="text" name="last_name" placeholder="Ex.: Pereira" required>
+            <input type="text" name="last_name" placeholder="Último nome" required>
         </div>
         <div>
             <label><b>Email</b></label>
-            <input type="email" name="email" placeholder="Ex.: t_alexandre@ufms.br" required>
+            <input type="email" name="email" placeholder="Digite seu email" required>
         </div>
         <div>
             <label><b>Senha</b></label>
@@ -19,10 +21,11 @@
         </div>
         <div>
             <label><b>Confirmação de senha</b></label>
-            <input type="password" name="password_2" placeholder="Digite sua senha mais uma vez" required>
+            <input type="password" name="password_2" placeholder="Digite sua senha novamente" required>
         </div>
         <div>
-            <button type="submit">Criar sua conta</button>
+            <button type="submit">Criar conta</button>
         </div>
     </div>
 </form>
+{% endblock %}
