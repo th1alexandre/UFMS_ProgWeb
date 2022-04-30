@@ -1,28 +1,31 @@
-<form action="{% url 'user_create' %}" method="POST">
-  {% csrf_token %}
-    <div>
+{% extends '_base.html' %}
+{% block content %}
+    <form action="{% url 'user_create' %}" method="POST">
+    {% csrf_token %}
         <div>
-            <label><b>Primeiro Nome</b></label>
-            <input type="text" name="first_name" placeholder="Ex.: Ednaldo" required>
+            <div>
+                <label><b>Primeiro Nome</b></label>
+                <input type="text" name="first_name" placeholder="Primeiro nome" required>
+            </div>
+            <div>
+                <label><b>Último Nome</b></label>
+                <input type="text" name="last_name" placeholder="Último nome" required>
+            </div>
+            <div>
+                <label><b>Email</b></label>
+                <input type="email" name="email" placeholder="Digite seu email" required>
+            </div>
+            <div>
+                <label><b>Senha</b></label>
+                <input type="password" name="password_1" placeholder="Digite sua senha" required>
+            </div>
+            <div>
+                <label><b>Confirmação de senha</b></label>
+                <input type="password" name="password_2" placeholder="Digite sua senha novamente" required>
+            </div>
+            <div>
+                <button type="submit">Criar conta</button>
+            </div>
         </div>
-        <div>
-            <label><b>Último Nome</b></label>
-            <input type="text" name="last_name" placeholder="Ex.: Pereira" required>
-        </div>
-        <div>
-            <label><b>Email</b></label>
-            <input type="email" name="email" placeholder="Ex.: t_alexandre@ufms.br" required>
-        </div>
-        <div>
-            <label><b>Senha</b></label>
-            <input type="password" name="password_1" placeholder="Digite sua senha" required>
-        </div>
-        <div>
-            <label><b>Confirmação de senha</b></label>
-            <input type="password" name="password_2" placeholder="Digite sua senha mais uma vez" required>
-        </div>
-        <div>
-            <button type="submit">Criar sua conta</button>
-        </div>
-    </div>
-</form>
+    </form>
+{% endblock %}
