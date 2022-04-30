@@ -1,40 +1,43 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-	<head>
-		<meta charset="UTF-8">
-		<meta name="viewport" content="width=device-width">
-		<title>Ednaldo Pereira</title> <!--tornar título dinâmico-->
 
-		<link rel="stylesheet" href="_base.css">
-		<link rel="stylesheet" href="_reset.css">
-		<!-- <link rel="stylesheet" href="https://fonts.googleapis.com/css"> trocar fonte -->
-	</head>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Ednaldo Pereira</title>
+    <!--tornar título dinâmico-->
 
-    <body>
-        <header>
-            <div>
-				<nav>
-					<ul>
-						<li><a href="{% url 'index' %}">Página inicial</a></li>
-						<li><a href="{% url 'review_' %}">Reviews</a></li>
-						{% if user.is_authenticated %}
-							<li><a href="{% url 'logout' %}">Logout</a></li>
-						{% else %}
-							<li><a href="{% url 'sign_in' %}">Login</a></li>
-							<li><a href="{% url 'sign_up' %}">Cadastro</a></li>
-						{% endif %}
-					</ul>
-				</nav>
-			</div>
-        </header>
+    <link rel="stylesheet" href="_base.css">
+    <link rel="stylesheet" href="_reset.css">
+    <!-- <link rel="stylesheet" href="https://fonts.googleapis.com/css"> trocar fonte -->
+</head>
 
-        <main>
-			{% block content %}{% endblock %}
-        </main>
+<body>
+    <header>
+        <div>
+            <nav>
+                <ul>
+                    <li><a href="{% url 'index' %}">Página inicial</a></li>
+                    <li><a href="{% url 'review_' %}">Reviews</a></li>
+                    {% if user.is_authenticated %}
+                    <li><a href="{% url 'logout' %}">Logout</a></li>
+                    {% else %}
+                    <li><a href="{% url 'sign_in' %}">Login</a></li>
+                    <li><a href="{% url 'sign_up' %}">Cadastro</a></li>
+                    {% endif %}
+                </ul>
+            </nav>
+        </div>
+    </header>
 
-        <footer>
-            <!-- <img src="logo.png"> -->
-			<p>&copy; Copyright Ednaldo Pereira - 2022</p>
-        </footer>
-    </body>
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+
+    <footer>
+        <!-- <img src="logo.png"> -->
+        <p>&copy; Copyright Ednaldo Pereira - 2022</p>
+    </footer>
+</body>
+
 </html>
