@@ -1,0 +1,10 @@
+/* Common CSS for all pages */
+html {
+    background-image: linear-gradient(#0e4062, #000000);
+
+    position: fixed; 
+    top: 0; 
+    left: 0;
+    min-width: 100%;
+    min-height: 100%;
+}

@@ -1,0 +1,17 @@
+<!-- Header -->
+<header>
+    <div>
+        <nav>
+            <ul>
+                <li><a href="{% url 'index' %}">Página inicial</a></li>
+                <li><a href="{% url 'review_' %}">Reviews</a></li>
+                {% if user.is_authenticated %}
+                <li><a href="{% url 'logout' %}">Logout</a></li>
+                {% else %}
+                <li><a href="{% url 'sign_in' %}">Login</a></li>
+                <li><a href="{% url 'sign_up' %}">Cadastro</a></li>
+                {% endif %}
+            </ul>
+        </nav>
+    </div>
+</header>
