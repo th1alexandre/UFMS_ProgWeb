@@ -1,0 +1,22 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Ednaldo Pereira</title>
+    <!--tornar título dinâmico ?-->
+
+    <!-- <link rel="stylesheet" href="{% static 'css/_reset.css' %}"> -->
+    <link rel="stylesheet" href="{% static 'css/_base.css' %}">
+    <!-- <link rel="stylesheet" href="https://fonts.googleapis.com/css"> trocar fonte -->
+</head>
+
+<body>
+    {% include 'shared/_header.html' %}
+    {% block content %}
+    
+    {% endblock %}
+    {% include 'shared/_footer.html' %}
+</body>
+</html>
