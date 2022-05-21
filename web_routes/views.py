@@ -4,8 +4,11 @@ from django.shortcuts import render, redirect
 def index(request):
     return render(request, 'index.html')
 
-def review_(request):
-    return render(request, 'review_.html')
+def review_view(request):
+    return render(request, 'review_view.html')
+
+def review_list(request):
+    return render(request, 'review_list.html')
 
 def review_edit(request):
     if _authenticated(request):
