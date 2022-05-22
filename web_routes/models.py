@@ -3,7 +3,8 @@ from uuid import uuid4
 
 
 class Review(models.Model):
-    id = models.UUIDField(default=uuid4, primary_key=True, editable=False)
+    id = models.UUIDField(default=uuid4, unique=True, editable=False)
+    url_id = models.AutoField(primary_key=True)
     title = models.CharField(max_length=50)
     author = models.CharField(max_length=50)
     category = models.CharField(max_length=50)
