@@ -28,6 +28,24 @@ def review_edit(request):
 
 def review_new(request):
     if _authenticated(request):
+        if request.method == 'POST':
+            title = request.POST['title']
+            director = request.POST['director']
+            category = request.POST['category']
+            review = request.POST['review']
+            author = request.POST['author']
+            public = request.POST['public']
+
+            data = {
+            'title': title,
+            'director': director,
+            'category': category,
+            'review': review,
+            'author': author,
+            'public': public
+            }
+            new_review = Review(**data)
+            new_review.save()
         return render(request, 'review_new.html')
     return redirect(sign_in)
 

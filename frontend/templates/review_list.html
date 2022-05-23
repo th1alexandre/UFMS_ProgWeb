@@ -5,8 +5,10 @@
     {% if reviews %}
     {% for review in reviews %}
     <h2>{{ review.title }}</h2>
-    <h3>{{ review.author }}</h3>
+    <h3>{{ review.director }}</h3>
     <h3>{{ review.category }}</h3>
+    <h3>{{ review.review }}</h3>
+    <h3>{{ review.author }}</h3>
     {% endfor %}
     {% else %}
     {% endif %}
