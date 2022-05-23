@@ -30,18 +30,18 @@ def review_new(request):
     if _authenticated(request):
         if request.method == 'POST':
             title = request.POST['title']
-            author = request.POST['author']
+            director = request.POST['director']
             category = request.POST['category']
             review = request.POST['review']
-            reviewer = request.POST['reviewer']
+            author = request.POST['author']
             public = request.POST['public']
 
             data = {
             'title': title,
-            'author': author,
+            'director': director,
             'category': category,
             'review': review,
-            'reviewer': reviewer,
+            'author': author,
             'public': public
             }
             new_review = Review(**data)
