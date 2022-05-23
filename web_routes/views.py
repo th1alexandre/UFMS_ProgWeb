@@ -1,4 +1,5 @@
 from django.shortcuts import render, redirect
+from .models import Review
 
 
 def index(request):
@@ -8,7 +9,11 @@ def review_view(request):
     return render(request, 'review_view.html')
 
 def review_list(request):
-    return render(request, 'review_list.html')
+    reviews = Review.objects.all()
+    data = {
+        'reviews': reviews
+    }
+    return render(request, 'review_list.html', data)
 
 def review_edit(request):
     if _authenticated(request):
