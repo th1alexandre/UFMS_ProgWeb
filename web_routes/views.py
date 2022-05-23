@@ -1,12 +1,16 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from .models import Review
 
 
 def index(request):
     return render(request, 'index.html')
 
-def review_view(request):
-    return render(request, 'review_view.html')
+def review_view(request, id):
+    review = get_object_or_404(Review, url_id=id)
+    data = {
+        'review': review
+    }
+    return render(request, 'review_view.html', data)
 
 def review_list(request):
     reviews = Review.objects.all()

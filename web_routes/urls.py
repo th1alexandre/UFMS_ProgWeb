@@ -4,7 +4,7 @@ from web_routes import views
 
 urlpatterns = [
     path('', views.index, name='index'),
-    path('review', views.review_view, name='review_view'),
+    path('review/<int:id>', views.review_view, name='review_view'),
     path('reviews', views.review_list, name='review_list'),
     path('review/edit', views.review_edit, name='review_edit'),
     path('review/new', views.review_new, name='review_new'),
