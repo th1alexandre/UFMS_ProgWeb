@@ -7,6 +7,7 @@ class Review(models.Model):
     url_id = models.AutoField(primary_key=True)
     title = models.CharField(max_length=50)
     author = models.CharField(max_length=50)
+    reviewer = models.CharField(max_length=50)
     category = models.CharField(max_length=50)
     review = models.TextField()
     public = models.BooleanField(default=False)

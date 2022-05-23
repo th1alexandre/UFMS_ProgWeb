@@ -13,11 +13,13 @@ def review_view(request, id):
     return render(request, 'review_view.html', data)
 
 def review_list(request):
-    reviews = Review.objects.all()
-    data = {
-        'reviews': reviews
-    }
-    return render(request, 'review_list.html', data)
+    if _authenticated(request):
+        reviews = Review.objects.all()
+        data = {
+            'reviews': reviews
+        }
+        return render(request, 'review_list.html', data)
+    return redirect(sign_in)
 
 def review_edit(request):
     if _authenticated(request):
