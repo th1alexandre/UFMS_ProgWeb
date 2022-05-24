@@ -26,9 +26,33 @@ def review_list(request):
         return render(request, 'review_list.html', data)
     return redirect(sign_in)
 
-def review_edit(request):
+def review_edit(request, id):
     if _authenticated(request):
-        return render(request, 'review_edit.html')
+        if request.method == 'POST':
+            user = request.user
+            new_title = request.POST['title']
+            new_director = request.POST['director']
+            new_category = request.POST['category']
+            new_review = request.POST['review']
+            new_author = request.POST['author']
+            new_public = request.POST['public']
+
+            updated_review = {
+                'title': new_title,
+                'director': new_director,
+                'category': new_category,
+                'review': new_review,
+                'author': new_author,
+                'public': new_public
+            }
+            Review.objects.filter(created_by=user, url_id=id).update(**updated_review)
+            return redirect(review_list)
+
+        review = get_object_or_404(Review, url_id=id)
+        data = {
+            'review': review
+        }
+        return render(request, 'review_edit.html', data)
     return redirect(sign_in)
 
 def review_new(request):
