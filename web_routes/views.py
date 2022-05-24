@@ -3,7 +3,11 @@ from .models import Review
 
 
 def index(request):
-    return render(request, 'index.html')
+    reviews = Review.objects.filter(public=True)
+    data = {
+        'reviews': reviews
+    }
+    return render(request, 'index.html', data)
 
 def review_view(request, id):
     review = get_object_or_404(Review, url_id=id)
