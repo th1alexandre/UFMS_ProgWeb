@@ -1,3 +1,4 @@
+from django.contrib.auth.models import User
 from django.db import models
 from uuid import uuid4
 
@@ -11,5 +12,6 @@ class Review(models.Model):
     author = models.CharField(max_length=50)
     review = models.TextField()
     public = models.BooleanField(default=False)
+    created_by = models.ForeignKey(User, on_delete=models.CASCADE)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
