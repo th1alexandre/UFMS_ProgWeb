@@ -1,7 +1,7 @@
 {% extends 'shared/base.html' %}
 {% load static %}
 {% block content %}
-    <form action="{% url 'review_edit' %}" method="POST">
+    <form action="{% url 'review_edit' review.url_id %}" method="POST">
         {% csrf_token %}
         <div>
             <div>
@@ -34,7 +34,7 @@
             </div>
         </div>
     </form>
-    <form action="{% url 'review_edit' %}" method="DELETE">
+    <form action="{% url 'review_edit' review.url_id %}" method="DELETE">
         {% csrf_token %}
         <button>Deletar crítica</button>
     </form>
