@@ -35,7 +35,6 @@
         </div>
     </form>
     <form action="{% url 'review_edit' review.url_id %}" method="DELETE">
-        {% csrf_token %}
         <button>Deletar crítica</button>
     </form>
 {% endblock %}
