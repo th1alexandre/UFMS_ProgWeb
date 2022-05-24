@@ -1,5 +1,41 @@
 {% extends 'shared/base.html' %}
 {% load static %}
 {% block content %}
-    <h1>"Edit Review" page</h1>
+    <form action="{% url 'review_edit' %}" method="POST">
+        {% csrf_token %}
+        <div>
+            <div>
+                <label><b>Título</b></label>
+                <input type="text" name="title" placeholder="Avengers: Infinity War" required>
+            </div>
+            <div>
+                <label><b>Diretor</b></label>
+                <input type="text" name="director" placeholder="Anthony e Joe Russo" required>
+            </div>
+            <div>
+                <label><b>Categoria</b></label>
+                <input type="text" name="category" placeholder="Fantasia" required>
+            </div>
+            <div>
+                <label><b>Crítica</b></label>
+                <input type="text" name="review" required>
+            </div>
+            <div>
+                <label><b>Autor</b></label>
+                <input type="text" name="author" placeholder="Seu nome" required>
+            </div>
+            <div>
+                <label><b>Publicar review</b></label>
+                <input type="hidden" name="public" value=False>
+                <input type="checkbox" name="public" value=True>
+            </div>
+            <div>
+                <button type="submit">Atualizar crítica</button>
+            </div>
+        </div>
+    </form>
+    <form action="{% url 'review_edit' %}" method="DELETE">
+        {% csrf_token %}
+        <button>Deletar crítica</button>
+    </form>
 {% endblock %}

@@ -3,7 +3,11 @@ from .models import Review
 
 
 def index(request):
-    return render(request, 'index.html')
+    reviews = Review.objects.filter(public=True)
+    data = {
+        'reviews': reviews
+    }
+    return render(request, 'index.html', data)
 
 def review_view(request, id):
     review = get_object_or_404(Review, url_id=id)
@@ -14,7 +18,8 @@ def review_view(request, id):
 
 def review_list(request):
     if _authenticated(request):
-        reviews = Review.objects.all()
+        user = request.user
+        reviews = Review.objects.filter(created_by=user)
         data = {
             'reviews': reviews
         }
@@ -29,6 +34,7 @@ def review_edit(request):
 def review_new(request):
     if _authenticated(request):
         if request.method == 'POST':
+            user = request.user
             title = request.POST['title']
             director = request.POST['director']
             category = request.POST['category']
@@ -42,7 +48,8 @@ def review_new(request):
             'category': category,
             'review': review,
             'author': author,
-            'public': public
+            'public': public,
+            'created_by': user
             }
             new_review = Review(**data)
             new_review.save()
