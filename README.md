@@ -13,7 +13,8 @@
 
 ## Resumo
 
-Lorem ipsum potenti conubia donec pellentesque at tortor magna, rhoncus cursus congue dolor malesuada nulla. vel phasellus nam quis hac fusce accumsan sit imperdiet in, fringilla nam molestie eleifend sapien adipiscing dictum dictumst per curabitur, pharetra himenaeos aliquam lacinia commodo nunc vitae imperdiet.
+Este é um projeto para a criação e visuzlização de críticas sobre filmes.
+
 <br>
 <br>
 
