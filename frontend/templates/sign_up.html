@@ -3,29 +3,62 @@
 {% block content %}
     <form action="{% url 'user_create' %}" method="POST">
         {% csrf_token %}
-        <div>
-            <div>
-                <label><b>Primeiro Nome</b></label>
-                <input type="text" name="first_name" placeholder="Primeiro nome" required>
+
+        <style>
+            .formCadastro{
+                background-color: rgb(189, 189, 189);
+                text-align: center;
+                padding: 15px 15px;
+                height: 300px;
+                width: 250px;
+                position: absolute;
+                left: 50%;
+                top: 50%;
+                transform: translate(-50%,-50%);
+                }
+
+            .opCadastro{
+                padding: 5px;
+
+            }
+
+            .opCriar{
+                margin-top: 20px;
+                width: 150px;
+                height: 30px;
+                border-radius: 5px 10px 30px;
+            }
+
+            .campos{
+                height: 35px;
+                width: 200px;
+                border-radius: 10px;
+                
+            }
+        </style>
+        <div class="formCadastro">
+            <div class="opCadastro">
+                <!-- <label><b>Primeiro Nome</b></label> -->
+                <input class="campos" type="text" name="first_name" placeholder="Digite seu primeiro nome" required>
             </div>
-            <div>
-                <label><b>Último Nome</b></label>
-                <input type="text" name="last_name" placeholder="Último nome" required>
+            <div class="opCadastro">
+                <!-- <label><b>Último Nome</b></label> -->
+                <input class="campos" type="text" name="last_name" placeholder="Digite seu sobrenome" required>
             </div>
-            <div>
-                <label><b>Email</b></label>
-                <input type="email" name="email" placeholder="Digite seu email" required>
+            <div class="opCadastro">
+                <!-- <label><b>Email</b></label> -->
+                <input class="campos" type="email" name="email" placeholder="Digite seu email" required>
             </div>
-            <div>
-                <label><b>Senha</b></label>
-                <input type="password" name="password_1" placeholder="Digite sua senha" required>
+            <div class="opCadastro">
+                <!-- <label><b>Senha</b></label> -->
+                <input class="campos" type="password" name="password_1" placeholder="Digite sua senha" required>
             </div>
-            <div>
-                <label><b>Confirmação de senha</b></label>
-                <input type="password" name="password_2" placeholder="Digite sua senha novamente" required>
+            <div class="opCadastro">
+                <!-- <label><b>Confirmação de senha</b></label> -->
+                <input class="campos" type="password" name="password_2" placeholder="Confirme sua senha" required>
             </div>
-            <div>
-                <button type="submit">Criar conta</button>
+            <div  >
+                <button class="opCriar" type="submit">Cadastrar</button>
             </div>
         </div>
     </form>
