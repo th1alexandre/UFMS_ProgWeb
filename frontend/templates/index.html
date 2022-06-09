@@ -1,15 +1,45 @@
 {% extends 'shared/base.html' %}
 {% load static %}
 {% block content %}
-    <h1>"Index" page</h1>
-    {% if reviews %}
-    {% for review in reviews %}
-    <h2>{{ review.title }}</h2>
-    <h3>{{ review.director }}</h3>
-    <h3>{{ review.category }}</h3>
-    <h3>{{ review.review }}</h3>
-    <h3>{{ review.author }}</h3>
-    {% endfor %}
-    {% else %}
-    {% endif %}
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+    /* talvez mudar isso aqui para algo mais interno mas por enquanto estilizar assim */
+    .critica{
+        width: 100%;
+        height: 70%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        align-items: center;
+
+    }
+    .filme{
+
+        background-color: white;
+        border-radius: 10px;
+        width: 200px;
+    }
+</style>
+
+
+        <h1>"Index" page</h1> 
+        <div class="critica">
+        <!-- <h1>"Index" page</h1> -->
+        {% if reviews %}
+        {% for review in reviews %}
+        
+            <div class="filme">
+
+                <h2>{{ review.title }}</h2>
+                <h3>{{ review.director }}</h3>
+                <h3>{{ review.category }}</h3>
+                <h3>{{ review.review }}</h3>
+                <h3>{{ review.author }}</h3></div>
+        {% endfor %}
+        {% else %}
+        {% endif %}</div>
+</body>
+</html>
 {% endblock %}

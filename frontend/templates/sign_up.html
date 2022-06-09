@@ -1,65 +1,92 @@
 {% extends 'shared/base.html' %}
 {% load static %}
 {% block content %}
-    <form action="{% url 'user_create' %}" method="POST">
-        {% csrf_token %}
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+            {% csrf_token %}
 
-        <style>
-            .formCadastro{
-                background-color: rgb(189, 189, 189);
-                text-align: center;
-                padding: 15px 15px;
-                height: 300px;
-                width: 250px;
-                position: absolute;
-                left: 50%;
-                top: 50%;
-                transform: translate(-50%,-50%);
+            <style>
+                .formCadastro{
+                    background-color: rgb(255, 255, 255);
+                    text-align: center;
+                    padding: 15px 15px;
+                    height: 400px;
+                    width: 300px;
+                    position: absolute;
+                    left: 50%;
+                    top: 50%;
+                    transform: translate(-50%,-50%);
+
+                    border-radius: 10px;
+                }
+               
+                .opCadastro{
+                    padding: 7px;
                 }
 
-            .opCadastro{
-                padding: 5px;
-
-            }
-
-            .opCriar{
-                margin-top: 20px;
-                width: 150px;
-                height: 30px;
-                border-radius: 5px 10px 30px;
-            }
-
-            .campos{
-                height: 35px;
-                width: 200px;
-                border-radius: 10px;
                 
-            }
-        </style>
+
+                #campos{
+                    height: 35px;
+                    width: 90%;
+                    font: times;
+                    margin: none;
+                    text-align: center;
+                }
+
+                .opCriar{
+                    margin: none;
+                    width: 100%;
+                    padding-top: 30px;
+                    padding-bottom: 30px;
+                    border: none;
+
+                }
+                #cadastrar{
+                    font-size: larger;
+                    background-color: black;
+                    text-align: center;
+                    font-family: 'Times New Roman', Times, serif;
+                    color: white;
+                    border-radius: 5px;
+                    width: 70%;
+                    height: 40px;
+                }
+            </style>
+
+    </head>
+    <body>
         <div class="formCadastro">
+            <div class="divCadastro">
             <div class="opCadastro">
                 <!-- <label><b>Primeiro Nome</b></label> -->
-                <input class="campos" type="text" name="first_name" placeholder="Digite seu primeiro nome" required>
+                <input id="campos" type="text" name="first_name" placeholder="Digite seu primeiro nome" required>
             </div>
             <div class="opCadastro">
                 <!-- <label><b>Último Nome</b></label> -->
-                <input class="campos" type="text" name="last_name" placeholder="Digite seu sobrenome" required>
+                <input id="campos" type="text" name="last_name" placeholder="Digite seu sobrenome" required>
             </div>
             <div class="opCadastro">
                 <!-- <label><b>Email</b></label> -->
-                <input class="campos" type="email" name="email" placeholder="Digite seu email" required>
+                <input id="campos" type="email" name="email" placeholder="Digite seu email" required>
             </div>
             <div class="opCadastro">
                 <!-- <label><b>Senha</b></label> -->
-                <input class="campos" type="password" name="password_1" placeholder="Digite sua senha" required>
+                <input id="campos" type="password" name="password_1" placeholder="Digite sua senha" required>
             </div>
             <div class="opCadastro">
                 <!-- <label><b>Confirmação de senha</b></label> -->
-                <input class="campos" type="password" name="password_2" placeholder="Confirme sua senha" required>
+                <input id="campos" type="password" name="password_2" placeholder="Confirme sua senha" required>
             </div>
-            <div  >
-                <button class="opCriar" type="submit">Cadastrar</button>
+            </div>
+            <div  class="opCriar">
+                <button id="cadastrar" type="submit">Cadastrar</button>
             </div>
         </div>
-    </form>
-{% endblock %}
+        {% endblock %}
+    </body>
+        
+</html>
+
