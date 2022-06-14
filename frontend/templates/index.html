@@ -21,22 +21,32 @@
         border-radius: 10px;
         width: 200px;
     }
+
+    #infoadd{
+        margin: 0.5px;
+    }
+
+    #essen{
+        text-align: justify;
+    }
+
 </style>
 
 
-        <h1>"Index" page</h1> 
+        <!-- <h1>"Index" page</h1>  -->
         <div class="critica">
         
         {% if reviews %}
         {% for review in reviews %}
         
             <div class="filme">
-
-                <h2>{{ review.title }}</h2>
-                <h3>{{ review.director }}</h3>
-                <h3>{{ review.category }}</h3>
-                <h3>{{ review.review }}</h3>
-                <h3>{{ review.author }}</h3></div>
+                <!-- botar a imagem aqui -->
+                <img src="" alt="">
+                <h3 id="essen">{{ review.title }}</h3>
+                <h5 id="infoadd">{{ review.director }}</h5>
+                <h5 id="infoadd">{{ review.category }}</h5>
+                <h4 id="essen">{{ review.review }}</h4>
+                <p id="infoadd">{{ review.author }}</p></div>
         {% endfor %}
         {% else %}
         {% endif %}</div>
