@@ -1,16 +1,19 @@
 <!-- Header -->
 <header>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
     <div>
-        <nav>
+        <nav>  
             <ul>
-                <b>Minha critica</b>
-                <button class="barraSuperior"><a href="{% url 'index' %}">Página inicial</a></button>
+                <b id="titulo">Minha critica</b>
+                <button class="barraSuperior"><a href="{% url 'index' %}" style="text-decoration:none">Página inicial</a></button>
                 {% if user.is_authenticated %}
-                <button class="barraSuperior"><a href="{% url 'review_buttonst' %}">My Reviews</a></button>
-                <button class="barraSuperior"><a href="{% url 'logout' %}">Logout</a></button>
+                <button class="barraSuperior"><a href="{% url 'review_buttonst' %}" style="text-decoration:none">My Reviews</a></button>
+                <button class="barraSuperior"><a href="{% url 'logout' %}" style="text-decoration:none">Logout</a></button>
                 {% else %}
-                <button class="barraSuperior"><a href="{% url 'sign_in' %}">Login</a></button>
-                <button class="barraSuperior"><a href="{% url 'sign_up' %}">Cadastro</a></button>
+                <button class="barraSuperior"><a href="{% url 'sign_in' %}" style="text-decoration:none">Login</a></button>
+                <button class="barraSuperior"><a href="{% url 'sign_up' %}" style="text-decoration:none">Cadastro</a></button>
                 {% endif %}
             </ul>
         </nav>

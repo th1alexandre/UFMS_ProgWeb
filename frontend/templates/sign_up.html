@@ -4,88 +4,44 @@
 <!DOCTYPE html>
 <html lang="pt-br">
     <head>
+        <link rel="stylesheet" href=".\static\css\sign_up.css">
         <meta charset="UTF-8">
             {% csrf_token %}
 
-            <style>
-                .formCadastro{
-                    background-color: rgb(255, 255, 255);
-                    text-align: center;
-                    padding: 15px 15px;
-                    height: 400px;
-                    width: 300px;
-                    position: absolute;
-                    left: 50%;
-                    top: 50%;
-                    transform: translate(-50%,-50%);
-
-                    border-radius: 10px;
-                }
-               
-                .opCadastro{
-                    padding: 7px;
-                }
-
-                
-
-                #campos{
-                    height: 35px;
-                    width: 90%;
-                    font: times;
-                    margin: none;
-                    text-align: center;
-                }
-
-                .opCriar{
-                    margin: none;
-                    width: 100%;
-                    padding-top: 30px;
-                    padding-bottom: 30px;
-                    border: none;
-
-                }
-                #cadastrar{
-                    font-size: larger;
-                    background-color: black;
-                    text-align: center;
-                    font-family: 'Times New Roman', Times, serif;
-                    color: white;
-                    border-radius: 5px;
-                    width: 70%;
-                    height: 40px;
-                }
-            </style>
-
     </head>
     <body>
-        <div class="formCadastro">
-            <div class="divCadastro">
-            <div class="opCadastro">
+        <div class="formCadastroLogin">
+            <div class="divCadastroLogin">
+            <div class="opCadastroLogin">
+                <h2>FAÇA SEU CADASTRO<h2>
+            </div>
+            <div class="opCadastroLogin">
                 <!-- <label><b>Primeiro Nome</b></label> -->
                 <input id="campos" type="text" name="first_name" placeholder="Digite seu primeiro nome" required>
             </div>
-            <div class="opCadastro">
+            <div class="opCadastroLogin">
                 <!-- <label><b>Último Nome</b></label> -->
                 <input id="campos" type="text" name="last_name" placeholder="Digite seu sobrenome" required>
             </div>
-            <div class="opCadastro">
+            <div class="opCadastroLogin">
                 <!-- <label><b>Email</b></label> -->
                 <input id="campos" type="email" name="email" placeholder="Digite seu email" required>
             </div>
-            <div class="opCadastro">
+            <div class="opCadastroLogin">
                 <!-- <label><b>Senha</b></label> -->
                 <input id="campos" type="password" name="password_1" placeholder="Digite sua senha" required>
             </div>
-            <div class="opCadastro">
+            <div class="opCadastroLogin">
                 <!-- <label><b>Confirmação de senha</b></label> -->
                 <input id="campos" type="password" name="password_2" placeholder="Confirme sua senha" required>
             </div>
             </div>
-            <div  class="opCriar">
-                <button id="cadastrar" type="submit">Cadastrar</button>
+            <div  class="opCriarLogar">
+               <button id="cadastrarLogar" type="submit">Cadastrar</button>
             </div>
         </div>
         {% endblock %}
+        
     </body>
         
 </html>
