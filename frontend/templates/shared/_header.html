@@ -9,7 +9,7 @@
                 <b id="titulo">Minha critica</b>
                 <button class="barraSuperior"><a href="{% url 'index' %}" style="text-decoration:none">Página inicial</a></button>
                 {% if user.is_authenticated %}
-                <button class="barraSuperior"><a href="{% url 'review_buttonst' %}" style="text-decoration:none">My Reviews</a></button>
+                <button class="barraSuperior"><a href="{% url 'review_list' %}" style="text-decoration:none">My Reviews</a></button>
                 <button class="barraSuperior"><a href="{% url 'logout' %}" style="text-decoration:none">Logout</a></button>
                 {% else %}
                 <button class="barraSuperior"><a href="{% url 'sign_in' %}" style="text-decoration:none">Login</a></button>

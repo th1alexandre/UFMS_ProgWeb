@@ -6,11 +6,12 @@
     <head>
         <link rel="stylesheet" href=".\static\css\sign_up.css">
         <meta charset="UTF-8">
-            {% csrf_token %}
+            
 
     </head>
     <body>
-        <div class="formCadastroLogin">
+        <form class="formCadastroLogin" action="{% url 'user_create' %}" method="POST">
+            {% csrf_token %}
             <div class="divCadastroLogin">
             <div class="opCadastroLogin">
                 <h2>FAÇA SEU CADASTRO<h2>
@@ -39,7 +40,7 @@
             <div  class="opCriarLogar">
                <button id="cadastrarLogar" type="submit">Cadastrar</button>
             </div>
-        </div>
+        </form>
         {% endblock %}
         
     </body>

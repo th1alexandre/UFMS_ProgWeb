@@ -3,7 +3,8 @@
 {% block content %}
 
     <link rel="stylesheet" href=".\static\css\sign_up.css">
-        <div class="formCadastroLogin">
+        <form class="formCadastroLogin" action="{% url 'login' %}" method="POST">
+            {% csrf_token %}
             <div class="divCadastroLogin">
                 <div class="opCadastroLogin">
                     <h2>FAÇA SEU LOGIN</h2>
@@ -17,6 +18,6 @@
                 <div class="opCriarLogar">
                     <button id="cadastrarLogar" type="submit">Login</button>
                 </div>
-        </div>
-    </div>
+            </div>
+        </form>
 {% endblock %}
