@@ -9,19 +9,29 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
+
+    .body{
+        overflow: auto;
+    }
     .critica{
         width: 100%;
-        height: 70%;
         display: flex;
         flex-wrap: wrap;
         justify-content: space-around;
-        align-items: center;
+        align-items:center;
     }
     .filme{
 
-        background-color: white;
-        border-radius: 10px;
-        width: 3h3h300px;
+        background-color: rgb(255, 255, 255);
+        text-align: center;
+        padding: 15px 15px;
+        height: 300px;
+        width: 300px;
+        left: 50%;
+        top: 50%;
+        margin-bottom: 10px;
+        border-radius: 5px;
+
     }
 
     #infoadd{
@@ -36,10 +46,8 @@
 </head>
 <body>
 
-    <h1>"List Reviews" page</h1>
 
-
-    <div  class="critica">
+    <div  class="critica" >
     {% if reviews %}
     {% for review in reviews %}   
 

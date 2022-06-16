@@ -41,5 +41,5 @@ button a:visited {
    
 }
 .barraSuperior:hover{
-    background-color: black;
+    border-bottom-color: black;
 }
