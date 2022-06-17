@@ -1,37 +1,100 @@
 {% extends 'shared/base.html' %}
 {% load static %}
 {% block content %}
-    <form action="{% url 'review_new' %}" method="POST">
-        {% csrf_token %}
-        <div>
-            <div>
-                <label><b>Título</b></label>
-                <input type="text" name="title" placeholder="Avengers: Infinity War" required>
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <link rel="stylesheet" href="sign_up.css">
+        <meta charset="UTF-8">
+        <style>
+            .formCadastroLogin{
+    background-color: rgb(255, 255, 255);
+    text-align: center;
+    padding: 15px 15px;
+    height: 450px;
+    width: 300px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+
+    border-radius: 10px;
+}
+
+.opCadastroLogin{
+    padding: 7px;
+}
+
+#campos{
+    height: 35px;
+    width: 90%;
+    font: times;
+    margin: none;
+    text-align: center;
+}
+
+.opCriarLogar{
+    margin: none;
+    width: 100%;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    border: none;
+
+}
+#cadastrarLogar{
+    font-size: larger;
+    background-color: black;
+    text-align: center;
+    font-family: 'Times New Roman', Times, serif;
+    color: white;
+    border-radius: 5px;
+    width: 70%;
+    height: 40px;
+}
+#cadastrarLogar:hover{
+    background-color:#001C5A;;
+}
+
+#paragrafo{
+    color:white;
+}
+    </style>
+    </head>
+    <body>
+        <form action="{% url 'review_new' %}" method="POST" class="formCadastroLogin">
+            {% csrf_token %}
+            <div class="divCadastroLogin">
+                <div class="opCadastroLogin">
+                    <!-- <label><b>Título</b></label> -->
+                    <input id="campos" type="text" name="title" placeholder="Título" required>
+                </div>
+                <div class="opCadastroLogin">
+                    <!-- <label><b>Diretor</b></label> -->
+                    <input id="campos" type="text" name="director" placeholder="Diretor" required>
+                </div>
+                <div class="opCadastroLogin">
+                    <!-- <label><b>Categoria</b></label> -->
+                    <input id="campos" type="text" name="category" placeholder="Categoria" required>
+                </div>
+                <div class="opCadastroLogin">
+                    <!-- <label><b>Crítica</b></label> -->
+                    <input id="campos" style="height: 80px; overflow-wrap: break-word;" type="text" placeholder="Crítica" name="review" required>
+                </div>
+                <div class="opCadastroLogin">
+                    <!-- <label><b>Autor</b></label> -->
+                    <input id="campos" type="text" name="author" placeholder="Autor" required>
+                </div>
+                <div class="opCadastroLogin">
+                    <label><b style="color: rgb(22, 126, 48);">Tornar publico</b></label>
+                    <input type="hidden" name="public" value=False>
+                    <input type="checkbox" name="public" value=True>
+                </div>
             </div>
-            <div>
-                <label><b>Diretor</b></label>
-                <input type="text" name="director" placeholder="Anthony e Joe Russo" required>
+            <div class="opCriarLogar">
+                <button id="cadastrarLogar" type="submit">Criar crítica</button>
             </div>
-            <div>
-                <label><b>Categoria</b></label>
-                <input type="text" name="category" placeholder="Fantasia" required>
-            </div>
-            <div>
-                <label><b>Crítica</b></label>
-                <input type="text" name="review" required>
-            </div>
-            <div>
-                <label><b>Autor</b></label>
-                <input type="text" name="author" placeholder="Seu nome" required>
-            </div>
-            <div>
-                <label><b>Publicar review</b></label>
-                <input type="hidden" name="public" value=False>
-                <input type="checkbox" name="public" value=True>
-            </div>
-            <div>
-                <button type="submit">Criar crítica</button>
-            </div>
-        </div>
-    </form>
-{% endblock %}
+        </form>
+        {% endblock %}
+    </body>
+<html
+

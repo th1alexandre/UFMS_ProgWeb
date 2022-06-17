@@ -4,7 +4,6 @@
 - Bianca Motta     - RGA 2021.1906.056-5
 - Gabriel Neris    - RGA 2020.1907.023-2
 - Thiago Alexandre - RGA 2021.1906.017-4
-- Thiago Simão     - RGA 2021.1906.058-1
 
 ### Professor:
 
@@ -13,7 +12,8 @@
 
 ## Resumo
 
-Lorem ipsum potenti conubia donec pellentesque at tortor magna, rhoncus cursus congue dolor malesuada nulla. vel phasellus nam quis hac fusce accumsan sit imperdiet in, fringilla nam molestie eleifend sapien adipiscing dictum dictumst per curabitur, pharetra himenaeos aliquam lacinia commodo nunc vitae imperdiet.
+Este é um projeto para a criação e visuzlização de críticas sobre filmes.
+
 <br>
 <br>
 

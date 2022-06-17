@@ -1,0 +1,51 @@
+.formCadastroLogin{
+    background-color: rgb(255, 255, 255);
+    text-align: center;
+    padding: 15px 15px;
+    height: 450px;
+    width: 300px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+
+    border-radius: 10px;
+}
+
+.opCadastroLogin{
+    padding: 7px;
+}
+
+#campos{
+    height: 35px;
+    width: 90%;
+    font: times;
+    margin: none;
+    text-align: center;
+}
+
+.opCriarLogar{
+    margin: none;
+    width: 100%;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    border: none;
+
+}
+#cadastrarLogar{
+    font-size: larger;
+    background-color: black;
+    text-align: center;
+    font-family: 'Times New Roman', Times, serif;
+    color: white;
+    border-radius: 5px;
+    width: 70%;
+    height: 40px;
+}
+#cadastrarLogar:hover{
+    background-color:rgb(58, 58, 58);
+}
+
+#paragrafo{
+    color:white;
+}
