@@ -1,7 +1,5 @@
 # Th
-static/
-web_routes/migrations
-web_api/migrations
+*.pyc
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
